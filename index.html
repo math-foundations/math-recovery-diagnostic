@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free Math Recovery Diagnostic">
+  <title>Math Recovery Diagnostic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="card" id="app">
+      <div class="brand">Math Foundations</div>
+
+      <div id="intro-screen" class="screen active">
+        <span class="eyebrow">FREE DIAGNOSTIC</span>
+        <h1>Find out exactly where you're struggling in math.</h1>
+        <p class="lead">
+          This short diagnostic checks your math foundation and identifies the skills
+          you should work on first.
+        </p>
+        <div class="info-grid">
+          <div><strong>24</strong><span>questions</span></div>
+          <div><strong>~10</strong><span>minutes</span></div>
+          <div><strong>1</strong><span>personalized assessment</span></div>
+        </div>
+        <button class="primary-btn" id="start-btn">Start Diagnostic</button>
+        <p class="small-note">Your answers are used only to prepare your assessment.</p>
+      </div>
+
+      <div id="profile-screen" class="screen">
+        <div class="progress-label">STEP 1 OF 3</div>
+        <div class="progress-track"><div class="progress-fill" style="width:33%"></div></div>
+        <span class="eyebrow">ABOUT YOU</span>
+        <h2>Let's personalize your diagnostic.</h2>
+        <p class="muted">There are no right or wrong answers on this page.</p>
+
+        <form id="profile-form">
+          <label>Age
+            <input type="number" id="age" min="8" max="100" required placeholder="e.g. 16">
+          </label>
+
+          <label>Grade / Year Level
+            <select id="educationLevel" required>
+              <option value="">Select one</option>
+              <option>Grade 7</option>
+              <option>Grade 8</option>
+              <option>Grade 9</option>
+              <option>Grade 10</option>
+              <option>Grade 11</option>
+              <option>Grade 12</option>
+              <option>College / University</option>
+              <option>Adult learner</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>What math are you currently studying?
+            <select id="currentSubject" required>
+              <option value="">Select one</option>
+              <option>General / Basic Math</option>
+              <option>Algebra</option>
+              <option>Geometry</option>
+              <option>Trigonometry</option>
+              <option>Precalculus</option>
+              <option>Calculus</option>
+              <option>College / Engineering Math</option>
+              <option>I'm not currently taking math</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>What feels hardest right now?
+            <select id="biggestStruggle" required>
+              <option value="">Select one</option>
+              <option>Basic arithmetic / number operations</option>
+              <option>Fractions, decimals, or percentages</option>
+              <option>Algebra / equations</option>
+              <option>Graphs, coordinates, or functions</option>
+              <option>Geometry</option>
+              <option>Trigonometry</option>
+              <option>Precalculus / advanced algebra</option>
+              <option>Calculus</option>
+              <option>Word problems</option>
+              <option>I'm not sure</option>
+            </select>
+          </label>
+
+          <label>How confident do you currently feel in math?
+            <select id="confidence" required>
+              <option value="">Select one</option>
+              <option>Very confident</option>
+              <option>Somewhat confident</option>
+              <option>Often confused</option>
+              <option>Completely lost</option>
+            </select>
+          </label>
+
+          <label>What is your #1 goal?
+            <select id="goal" required>
+              <option value="">Select one</option>
+              <option>Rebuild my math foundation</option>
+              <option>Become more confident</option>
+              <option>Improve my grades</option>
+              <option>Prepare for college</option>
+              <option>Pass a math class</option>
+              <option>Prepare for an exam</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <button class="primary-btn" type="submit">Continue to Diagnostic</button>
+        </form>
+      </div>
+
+      <div id="quiz-screen" class="screen">
+        <div class="quiz-top">
+          <div>
+            <div class="progress-label" id="question-counter">QUESTION 1 OF 24</div>
+            <div class="progress-track"><div class="progress-fill" id="quiz-progress"></div></div>
+          </div>
+          <div class="category-pill" id="category-pill">Number Sense</div>
+        </div>
+
+        <div class="question-number" id="question-number">01</div>
+        <h2 id="question-text"></h2>
+        <div id="options" class="options"></div>
+
+        <button class="primary-btn" id="next-btn" disabled>Next Question</button>
+      </div>
+
+      <div id="email-screen" class="screen">
+        <div class="progress-label">STEP 3 OF 3</div>
+        <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+        <span class="eyebrow">ALMOST DONE</span>
+        <h2>Your diagnostic is complete.</h2>
+        <p class="lead">
+          Enter your email and I'll send your personalized Math Recovery Assessment
+          within 24 hours.
+        </p>
+
+        <form id="email-form">
+          <label>Email address
+            <input type="email" id="email" required placeholder="you@example.com">
+          </label>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" required>
+            <span>I agree to receive my Math Recovery Assessment by email.</span>
+          </label>
+
+          <button class="primary-btn" type="submit" id="submit-btn">Submit My Diagnostic</button>
+        </form>
+
+        <p id="submit-status" class="status"></p>
+      </div>
+
+      <div id="success-screen" class="screen">
+        <div class="success-icon">✓</div>
+        <span class="eyebrow">SUBMITTED</span>
+        <h2>You're all set.</h2>
+        <p class="lead">
+          Your responses have been submitted. I'll review your results and send your
+          personalized assessment within 24 hours.
+        </p>
+        <p class="small-note">You can close this page now.</p>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
